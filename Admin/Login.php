@@ -43,7 +43,7 @@
                     <div class="login-content">
                         <div class="login-logo">
                             <a href="#">
-                                <img src="../Dashboard/images/icon/logo.png" alt="CoolAdmin">
+                                <img src="../Assets/img/gbi logo transparant.png" alt="CoolAdmin">
                             </a>
                         </div>
                         <div class="login-form">
