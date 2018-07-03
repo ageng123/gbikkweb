@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 03, 2018 at 10:38 AM
+-- Generation Time: Jul 03, 2018 at 10:48 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -23,15 +23,16 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data user`
+-- Table structure for table `data_user`
 --
 
-CREATE TABLE `data user` (
+CREATE TABLE `data_user` (
   `id_User` int(11) NOT NULL,
-  `Nama_User` int(11) NOT NULL,
-  `Photo` int(11) NOT NULL,
-  `Jenis_Kelamin` int(11) NOT NULL,
-  `id` int(11) NOT NULL
+  `Nama_User` text NOT NULL,
+  `Jenis_Kelamin` text NOT NULL,
+  `E-mail` varchar(30) NOT NULL,
+  `id` int(11) NOT NULL,
+  `photo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -52,9 +53,9 @@ CREATE TABLE `user` (
 --
 
 --
--- Indexes for table `data user`
+-- Indexes for table `data_user`
 --
-ALTER TABLE `data user`
+ALTER TABLE `data_user`
   ADD PRIMARY KEY (`id_User`);
 
 --
@@ -68,9 +69,9 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `data user`
+-- AUTO_INCREMENT for table `data_user`
 --
-ALTER TABLE `data user`
+ALTER TABLE `data_user`
   MODIFY `id_User` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `user`
