@@ -1,3 +1,10 @@
+<?php session_start();
+if(!isset($_SESSION['username'])) {
+   header('location:login.php'); 
+} else { 
+   $username = $_SESSION['username']; 
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -539,7 +546,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="title-4">Welcome back
-                                <span>John!</span>
+                                <span><?php echo $username; ?>!</span>
                             </h1>
                             <hr class="line-seprate">
                         </div>
