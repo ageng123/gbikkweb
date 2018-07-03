@@ -13,7 +13,7 @@
        echo "<div align='center'>Password salah! <a href='login.php'>Back</a></div>";
      } else {
        $_SESSION['username'] = $hasil['username'];
-       header('location:teslogin.php');
+       header('location:dashboard.php');
      }
    }
 ?>
