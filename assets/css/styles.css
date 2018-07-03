@@ -1,0 +1,87 @@
+body {
+  background-color:white;
+  color:black;
+}
+
+#hero {
+  background-repeat:no-repeat;
+  background-size:cover;
+  width:100%;
+  height:100vh;
+  background-image:url("../../assets/img/Worship-leader-.jpg");
+  background-position:center;
+}
+
+@media (min-width: 768px) {
+  #hero {
+    background-image:url("../../assets/img/Worship-leader-.jpg");
+  }
+}
+
+.navbar-light .navbar-brand {
+  background-image:url("../../assets/img/gbi logo transparant.png");
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+  height:60px;
+  width:100px;
+}
+
+#navcol-1 {
+  font-size:13px;
+  font-family:Lato, sans-serif;
+  text-transform:uppercase;
+}
+
+.h1, h1 {
+  color:black;
+  font-family:'Montserrat';
+}
+
+#title {
+  font-family:Abel, sans-serif;
+  font-size:32px;
+}
+
+#subtitle {
+  color:rgb(0,0,0);
+  font-family:Montserrat, sans-serif;
+}
+
+.blockquote {
+  color:#d20b0b;
+  font-family:Abel, sans-serif;
+}
+
+.blockquote-footer {
+  color:white;
+}
+
+#message-pastor {
+  margin:30px 0px 10px 0px;
+  padding:10px;
+}
+
+#img_avatar {
+  width:210px;
+  height:209px;
+}
+
+#content_message {
+  padding:20px;
+  margin-top:50px;
+  margin-bottom:50px;
+}
+
+#section-video {
+  background-color:#010000;
+  background-position:bottom;
+  background-size:cover;
+  background-repeat:no-repeat;
+  text-align:center;
+}
+
+#form {
+  padding:43px;
+}
+

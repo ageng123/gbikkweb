@@ -1,0 +1,114 @@
+.social-icons {
+  color:#313437;
+  background-color:#fff;
+  text-align:center;
+  padding:70px 0;
+}
+
+@media (max-width:767px) {
+  .social-icons {
+    padding:50px 0;
+  }
+}
+
+.social-icons i {
+  font-size:32px;
+  display:inline-block;
+  color:#757980;
+  margin:0 10px;
+  width:60px;
+  height:60px;
+  border:1px solid #c8ced7;
+  text-align:center;
+  border-radius:50%;
+  line-height:60px;
+}
+
+#section-video iframe {
+  width:90%;
+  height:400px;
+}
+
+@media (min-width: 1200px) {
+  #section-video iframe {
+    width:1200px;
+    height:500px;
+  }
+}
+
+#h1-pendatang {
+  border-bottom:solid;
+  border-width:1px;
+}
+
+#section-pendatang-baru {
+  margin:60px;
+  padding:30px;
+}
+
+.fa.fa-star {
+  color:rgb(0,0,0);
+}
+
+.fa.fa-clock-o {
+  color:rgb(0,0,0);
+  width:100%;
+  font-size:120px;
+  text-align:center;
+}
+
+.icon.ion-location {
+  width:100%;
+  font-size:120px;
+  text-align:center;
+}
+
+.icon.ion-ios-location {
+}
+
+.fa.fa-location-arrow {
+  font-size:120px;
+  width:100%;
+  text-align:center;
+}
+
+.h3, h3 {
+}
+
+.h5, h5 {
+  color:black;
+  text-align:center;
+}
+
+.material-icons {
+  color:rgb(0,0,0);
+  font-size:120px;
+  text-align:center;
+  width:100%;
+}
+
+#our-ministri {
+  padding:20px;
+  margin-top:70px;
+}
+
+our-ministry img {
+  width:50px;
+}
+
+#div-minstri {
+  position:relative;
+}
+
+.text-block {
+  position:absolute;
+  bottom:20px;
+  left:50px;
+  color:white;
+  font-size:54px;
+}
+
+.footer-dark {
+  margin-top:100px;
+}
+
