@@ -76,6 +76,10 @@ img {
     width: 200px;
     height: auto;
 }
+.page-wrapper img {
+    width: 150px;
+    height: 65px;
+}
 
 p {
     margin: 0;
