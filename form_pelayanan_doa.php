@@ -44,14 +44,17 @@
             </div>
         </nav>
     </div>
-    <div id="form" class="container">
+    <div id="form" class="container" style="background: rgba(255,255,255,0.3);box-shadow: 0px 0px 10px 2px #000000"><b>
         <h1 class="text-center" style="margin-bottom:46px;font-family:Arvo, serif;">Pelayanan Doa</h1>
         <p class="text-center" style="font-family:Montserrat, sans-serif;"><br>Sebagai orang Kristen, saat kita menghadapi masalah, kita diperhadapkan dengan dua pilihan yaitu menyerah dengan masalah atau mengandalkan Tuhan melalui doa. Firman Tuhan berkata doa orang benar, bila dengan yakin didoakan, sangat besar kuasanya.Kami,
-            tim pendoa, ada bersama Anda untuk mendukung Anda dalam doa atas masalah-masalah yang dihadapi sampai TUHAN menyatakan kemulian-Nya atas permohonan Anda.<br><br></p>
-        <blockquote class="blockquote">
-            <p class="lead text-left mb-0 bold"><br><br><em>"Janganlah hendaknya kamu kuatir tentang apapun juga, tetapi nyatakanlah dalam segala hal keinginanmu kepada Allah dalam doa dan permohonan dengan ucapan syukur. Damai sejahtera Allah, yang melampaui segala akal, akan memelihara hati dan pikiranmu dalam Kristus Yesus."&nbsp;</em><br><br></p>
+            tim pendoa, ada bersama Anda untuk mendukung Anda dalam doa atas masalah-masalah yang dihadapi sampai TUHAN menyatakan kemulian-Nya atas permohonan Anda. </i></b><br><br></p>
+    </b>
+        
+        <blockquote class="blockquote"><b><i>
+             <p class="lead text-left mb-0 bold"><br><br><em>"Janganlah hendaknya kamu kuatir tentang apapun juga, tetapi nyatakanlah dalam segala hal keinginanmu kepada Allah dalam doa dan permohonan dengan ucapan syukur. Damai sejahtera Allah, yang melampaui segala akal, akan memelihara hati dan pikiranmu dalam Kristus Yesus."&nbsp;</em><br><br></p>
             <footer
                 class="blockquote-footer" style="color:rgb(210,11,11);"><strong><em>Filipi 4 : 6 - 7</em></strong><br><br></footer>
+       
         </blockquote>
         <div class="row justify-content-center">
             <div class="col-7">
