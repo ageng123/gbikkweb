@@ -2,9 +2,16 @@
 if(!isset($_SESSION['username'])) {
    header('location:login.php'); 
 } else { 
-   $username = $_SESSION['username']; 
-}
+   $username = $_SESSION['username'];
+   include_once('koneksi.php');
+  $sql = "SELECT * FROM data_user WHERE username = '".$username."'";
+   $query = $db->query($sql);
+   $hasil = $query->fetch_assoc();
+   $nama  = $hasil['Nama_user'];
+   $email = $hasil['E-mail'];
+     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,8 +51,8 @@ if(!isset($_SESSION['username'])) {
 
 <body class="animsition">
     <div class="page-wrapper">
-        <?php include ('header.php') ?>
-        
+
+<?php include_once('header.php'); ?>
 
         <!-- PAGE CONTENT-->
         <div class="page-content--bgf7">
@@ -86,7 +93,7 @@ if(!isset($_SESSION['username'])) {
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="title-4">Welcome back
-                                <span><?php echo $username; ?>!</span>
+                                <span><?php echo $nama ?></span>
                             </h1>
                             <hr class="line-seprate">
                         </div>
@@ -139,6 +146,92 @@ if(!isset($_SESSION['username'])) {
                 </div>
             </section>
             <!-- END STATISTIC-->
+<<<<<<< HEAD
+
+            <!-- STATISTIC CHART-->
+            <section class="statistic-chart">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="title-5 m-b-35">statistics</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4">
+                            <!-- CHART-->
+                            <div class="statistic-chart-1">
+                                <h3 class="title-3 m-b-30">chart</h3>
+                                <div class="chart-wrap">
+                                    <canvas id="widgetChart5"></canvas>
+                                </div>
+                                <div class="statistic-chart-1-note">
+                                    <span class="big">10,368</span>
+                                    <span>/ 16220 items sold</span>
+                                </div>
+                            </div>
+                            <!-- END CHART-->
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <!-- TOP CAMPAIGN-->
+                            <div class="top-campaign">
+                                <h3 class="title-3 m-b-30">top campaigns</h3>
+                                <div class="table-responsive">
+                                    <table class="table table-top-campaign">
+                                        <tbody>
+                                            <tr>
+                                                <td>1. Australia</td>
+                                                <td>$70,261.65</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2. United Kingdom</td>
+                                                <td>$46,399.22</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3. Turkey</td>
+                                                <td>$35,364.90</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4. Germany</td>
+                                                <td>$20,366.96</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5. France</td>
+                                                <td>$10,366.96</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END TOP CAMPAIGN-->
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <!-- CHART PERCENT-->
+                            <div class="chart-percent-2">
+                                <h3 class="title-3 m-b-30">chart by %</h3>
+                                <div class="chart-wrap">
+                                    <canvas id="percent-chart2"></canvas>
+                                    <div id="chartjs-tooltip">
+                                        <table></table>
+                                    </div>
+                                </div>
+                                <div class="chart-info">
+                                    <div class="chart-note">
+                                        <span class="dot dot--blue"></span>
+                                        <span>products</span>
+                                    </div>
+                                    <div class="chart-note">
+                                        <span class="dot dot--red"></span>
+                                        <span>Services</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END CHART PERCENT-->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END STATISTIC CHART-->
+=======
             <div class="container">
                     <div class="row">
                             <div class="col-md-12">
@@ -148,6 +241,7 @@ if(!isset($_SESSION['username'])) {
                     </div>
          
           
+>>>>>>> b7912aa5fc0e11042180f99d5b51bfe2b3231a58
 
             <!-- DATA TABLE-->
             <section class="p-t-20">
