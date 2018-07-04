@@ -36,69 +36,69 @@
             </div>
         </div>
         <div id="rekening-bank" class="text-center">
-            <div class="row" style="border:soild;">
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;">
+            <div class="row" style="border:solid; background: rgba(0,0,0,0.3);">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;background: rgba(0,0,0,0.3);">
                     <h3>Persembahan SC</h3>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;background: rgba(0,0,0,0.3);">
                     <h3>521 0128 761</h3>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;background: rgba(0,0,0,0.3);">
                     <h3>BCA Harapan Indah</h3>
                 </div>
             </div>
             <div class="row" style="border:soild;">
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-left:solid;border-right:solid;background: rgba(0,0,0,0.3);">
                     <h3>Perpuluhan &amp; Umum</h3>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;background: rgba(0,0,0,0.3);">
                     <h3>521 0080 505</h3>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;background: rgba(0,0,0,0.3);">
                     <h3>BCA Harapan Indah</h3>
                 </div>
             </div>
             <div class="row" style="border:soild;">
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-left:solid;border-right:solid;background: rgba(0,0,0,0.3);">
                     <h3>Komsel</h3>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;background: rgba(0,0,0,0.3);">
                     <h3>240 0123 678</h3>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;background: rgba(0,0,0,0.3);">
                     <h3>BCA Cengkeh</h3>
                 </div>
             </div>
             <div class="row" style="border:soild;">
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-left:solid;border-right:solid;background: rgba(0,0,0,0.3);">
                     <h3>PI &amp; Misi</h3>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;background: rgba(0,0,0,0.3);">
                     <h3>763 0351 388</h3>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;background: rgba(0,0,0,0.3);">
                     <h3>BCA Permata Indah 2</h3>
                 </div>
             </div>
             <div class="row" style="border:soild;">
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-left:solid;border-right:solid;background: rgba(0,0,0,0.3);">
                     <h3>Diakonia &amp; Kematian</h3>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;background: rgba(0,0,0,0.3);">
                     <h3>106 4300 965</h3>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;background: rgba(0,0,0,0.3);">
                     <h3>BCA Pintu Air</h3>
                 </div>
             </div>
             <div class="row" style="border:soild;">
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-bottom:solid;border-left:solid;border-right:solid;background: rgba(0,0,0,0.3);">
                     <h3>Maintenance Gereja</h3>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-bottom:solid;border-right:solid;background: rgba(0,0,0,0.3);">
                     <h3>487 0488 888</h3>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-right:solid;">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="border-bottom:solid;border-right:solid;background: rgba(0,0,0,0.3);">
                     <h3>BCA Pademangan</h3>
                 </div>
             </div>
