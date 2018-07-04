@@ -23,7 +23,7 @@
                                     <span class="bot-line"></span>Form</a>
                                      <ul class="header3-sub-list list-unstyled">
                                     <li>
-                                        <a href="login.html">form akun</a>
+                                        <a href="form.php">form akun</a>
                                     </li>
                                     <li>
                                         <a href="register.html">form main event</a>

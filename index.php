@@ -24,31 +24,7 @@
 
 <body style="background-color:rgb(247,246,246);">
     <section class="d-flex flex-column justify-content-between" id="hero">
-       <div id="hero-top">
-            <nav class="navbar navbar-light navbar-expand-md pulse animated">
-                <div class="container-fluid"><a class="navbar-brand" href="#"></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse"
-                        id="navcol-1">
-                        <ul class="nav navbar-nav mx-auto">
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="#" target="_top">Home</a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.html" target="_top">About Us</a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="Persembahan.html" target="_top">GIVING</a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                            <li class="dropdown"><a class="dropdown-toggle nav-link text-capitalize dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">MINISTRIES</a>
-                                <div class="dropdown-menu" role="menu"><a class="dropdown-item text-capitalize" role="presentation" href="#">First Item</a><a class="dropdown-item text-capitalize" role="presentation" href="#">Second Item</a><a class="dropdown-item text-capitalize" role="presentation"
-                                        href="#">Third Item</a></div>
-                            </li>
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="event.html" target="_top">NEWS</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav">
-                            <li class="nav-item" role="presentation"><a class="nav-link active" href="#"><i class="icon ion-social-twitter"></i></a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link active" href="#"><i class="icon ion-social-youtube"></i></a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="#"><i class="icon ion-social-facebook"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
+       <?php include_once('navbar.php'); ?>
         <div id="hero-bottom">
             <div class="container">
                 <div class="row">
@@ -113,7 +89,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="card"><img class="rounded img-fluid card-img w-100 d-block" src="assets/img/mission.jpg">
-                    <a href="ministries.html" target="_top">
+                    <a href="ministries.php" target="_top">
                         <div class="card-img-overlay" data-bs-hover-animate="tada">
                             <h4 class="d-flex" style="font-size:33px;color:rgb(167,0,0);">Our Ministries</h4>
                         </div>
@@ -122,7 +98,7 @@
             </div>
             <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="card"><img class="rounded img-fluid card-img w-100 d-block" src="assets/img/pray.jpg">
-                    <a href="form pelayanan doa.html" target="_top">
+                    <a href="form_pelayanan_doa.php" target="_top">
                         <div class="card-img-overlay" data-bs-hover-animate="tada">
                             <h4 class="d-flex" style="font-size:33px;color:rgb(167,0,0);">Pelayanan Doa</h4>
                         </div>
@@ -131,7 +107,7 @@
             </div>
             <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="card"><img class="rounded img-fluid card-img w-100 d-block" src="assets/img/gospel.jpg">
-                    <a href="kotbah.html" target="_top">
+                    <a href="kotbah.php" target="_top">
                         <div class="card-img-overlay" data-bs-hover-animate="tada">
                             <h4 class="d-flex" style="font-size:33px;color:rgb(167,0,0);">Kotbah</h4>
                         </div>
