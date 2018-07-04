@@ -26,10 +26,10 @@
                                         <a href="form.php">form akun</a>
                                     </li>
                                     <li>
-                                        <a href="register.html">form main event</a>
+                                        <a href="register.php">form main event</a>
                                     </li>
                                      <li>
-                                        <a href="register.html">form news
+                                        <a href="register.php">form news
                                         </a>
                                     </li>
                                     

@@ -23,27 +23,7 @@
 </head>
 
 <body style="background-image:url(&quot;assets/img/pray.jpg&quot;);background-size:cover;background-repeat:no-repeat;">
-    <div id="hero-top">
-        <nav class="navbar navbar-light navbar-expand-md pulse animated" style="background-color:rgba(241,241,241,0.7);">
-            <div class="container-fluid"><a class="navbar-brand" href="index.html"></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse"
-                    id="navcol-1">
-                    <ul class="nav navbar-nav mx-auto">
-                        <li class="nav-item" role="presentation"><a class="nav-link active" href="index.html" target="_top">Home</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.html">About Us</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Persembahan.html" target="_top">GIVING</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="ministries.html" target="_top">Ministry</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="event.html" target="_top">NEWS</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav">
-                        <li class="nav-item" role="presentation"><a class="nav-link active" href="#"><i class="icon ion-social-twitter" style="color:rgba(9,181,204,0.9);"></i></a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link active" href="#"><i class="icon ion-social-youtube" style="color:rgba(201,0,0,0.9);"></i></a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="#"><i class="icon ion-social-facebook" style="color:#516ccc;"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
+    <?php include('navbar.php'); ?>
     <div id="form" class="container" style="background: rgba(255,255,255,0.3);box-shadow: 0px 0px 10px 2px #000000"><b>
         <h1 class="text-center" style="margin-bottom:46px;font-family:Arvo, serif;">Pelayanan Doa</h1>
         <p class="text-center" style="font-family:Montserrat, sans-serif;"><br>Sebagai orang Kristen, saat kita menghadapi masalah, kita diperhadapkan dengan dua pilihan yaitu menyerah dengan masalah atau mengandalkan Tuhan melalui doa. Firman Tuhan berkata doa orang benar, bila dengan yakin didoakan, sangat besar kuasanya.Kami,
