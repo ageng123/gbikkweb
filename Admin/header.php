@@ -51,7 +51,7 @@
                             </li>
                             <li class="has-sub">
                                 <a href="#">
-                                    <i class="fas fa-desktop"></i>
+                                    <i class="fas fa-hand-paper"></i>
                                     <span class="bot-line"></span>response</a>
                                 <ul class="header3-sub-list list-unstyled">
                                     <li>
