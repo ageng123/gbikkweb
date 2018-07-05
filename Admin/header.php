@@ -18,7 +18,7 @@
                             </li>
                             
                             <li class="has-sub">
-                                <a href="form.php">
+                                <a href="">
                                     <i class="fas fa-copy"></i>
                                     <span class="bot-line"></span>Form</a>
                                      <ul class="header3-sub-list list-unstyled">
@@ -26,10 +26,10 @@
                                         <a href="form.php">form akun</a>
                                     </li>
                                     <li>
-                                        <a href="register.php">form main event</a>
+                                        <a href="formmainevent.php">form main event</a>
                                     </li>
                                      <li>
-                                        <a href="register.php">form news
+                                        <a href="formnews.php">form news
                                         </a>
                                     </li>
                                     
@@ -41,7 +41,7 @@
                                     <span class="bot-line"></span>video</a>
                                 <ul class="header3-sub-list list-unstyled">
                                     <li>
-                                        <a href="login.html">video pengumuman</a>
+                                        <a href="videopengumuman.php">video pengumuman</a>
                                     </li>
                                     <li>
                                         <a href="register.html">video kotbah</a>

@@ -5,7 +5,7 @@
    $username = $_POST['username'];
    $pass = $_POST['password'];   
    $sql = "SELECT * FROM user WHERE username = '$username'";
-   $query = $db->query($sql);
+   $query = $db_link->query($sql);
    $hasil = $query->fetch_assoc();
    if($query->num_rows == 0) {
      echo "<div align='center'>Username Belum Terdaftar! <a href='login.php'>Back</a></div>";

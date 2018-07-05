@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<?php include('Admin/koneksi.php'); ?>
+
 <html>
 
 <head>
@@ -46,12 +48,33 @@
         </blockquote>
         <div class="row justify-content-center">
             <div class="col-7">
-                <form>
-                    <div class="form-group"><label>Nama</label><input class="form-control" type="text" required=""></div>
-                    <div class="form-group"><label>Alamat</label><input class="form-control" type="text" required=""></div>
-                    <div class="form-group"><label>No. Telepon</label><input class="form-control" type="text"><label style="font-size:14px;">*Diperlukan jika ingin dibalas melalui SMS/WA</label></div>
-                    <div class="form-group"><label>Email</label><input class="form-control" type="text"></div><label style="font-size:14px;">*Diperlukan jika ingin dibalas melalui email</label>
-                    <div class="form-group"><label>pesan</label><textarea class="form-control" style="height:116px;"></textarea></div><button class="btn btn-primary" type="submit">Submit</button></form>
+                <form action="Admin/aksidoa.php" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <div class="form-group">
+                    	<label>Nama</label>
+                    	<input class="form-control" type="text" name="nama" required="">
+                    </div>
+                    <div class="form-group">
+                    	<label>Alamat</label>
+                    	<input class="form-control" type="text" name="alamat" required="">
+                    </div>
+                   	<div class="form-group">
+                   		<label>No. Telepon</label>
+                   		<input class="form-control" type="text" name="no_handphone">
+                   		<label style="font-size:14px;">*Diperlukan jika ingin dibalas melalui SMS/WA</label>
+                   	</div>
+                   
+                    <div class="form-group">
+                    	<label>pesan</label>
+                    	<textarea class="form-control" name="isi_doa"  style="height:116px;"></textarea>
+                    </div>
+
+
+                    <button type="submit" value="submit" name="input"class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Submit
+                    </button>
+
+
+       			</form>
             </div>
         </div>
     </div>
