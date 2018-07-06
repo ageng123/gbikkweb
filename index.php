@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include('Admin/koneksi.php'); ?>
 <html>
 
 <head>
@@ -82,9 +83,28 @@
         </div>
     </section>
     <section id="section-video">
+
+
+          
+
         <div id="new-h1" style="background-position:bottom;background-color:#080808;">
             <h1 class="text-center" style="color:rgb(255,255,255);margin:0px 0px 0px 20px;font-family:Montserrat, sans-serif;">GBI Kasih Karunia News&nbsp;</h1>
-        </div><iframe width="560" height="315" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/xp5qqrn1v5s?showinfo=0&amp;rel=0"></iframe></section>
+        </div>
+
+         <?php
+            $query_mysql = mysqli_query($db_link, "SELECT * FROM video_pengumuman ORDER BY id_vidpengumuman DESC LIMIT 1");
+            while($data = mysqli_fetch_array($query_mysql, MYSQLI_ASSOC)){
+            ?>
+
+            <?php echo $data['videonya']; ?>
+        <?php } ?>
+    </section>
+
+
+
+
+
+
     <div id="our-ministri"gh class="container-fluid">
         <div class="row">
             <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">

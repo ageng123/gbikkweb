@@ -233,50 +233,26 @@ include_once('session.php');
                                         <strong>Basic Form</strong> Elements
                                     </div>
                                     <div class="card-body card-block">
-                                        <form action="aksiform.php" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                        <form action="aksimainevent.php" method="post" enctype="multipart/form-data" class="form-horizontal">
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label class=" form-control-label">Static</label>
+                                                    <label class=" form-control-label">Admin</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <p class="form-control-static">Username</p>
+                                                    <p class="form-control-static"><?php echo $user_name ?></p>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label for="text-input" class=" form-control-label">Judult</label>
+                                                    <label for="text-input" class=" form-control-label">Judul</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="judul" placeholder="Text" class="form-control">
+                                                    <input type="text" id="text-input" name="judul" placeholder="Judul Event" class="form-control">
                                                    
                                                 </div>
                                             </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="email-input" class=" form-control-label">Tanggal </label>
-                                                </div>
-                                              
-                                                 <div class="col-12 col-md-9">
-                                                    <input type="date" id="date-input" name="tanggal" placeholder="" class="form-control">
-                                                    
-                                                </div>
-                                            </div>
-                                            
-                                       
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="textarea-input" class=" form-control-label">Keterangan</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <textarea name="keterangan" id="textarea-input" rows="9" placeholder="Content..." class="form-control"></textarea>
-                                                </div>
-                                            </div>
-                                           
-                                          
-                                   
                                          
                                             
-                                         
                                           
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
@@ -285,17 +261,14 @@ include_once('session.php');
                                                 <div class="col-12 col-md-9">
                                                     <input type="file" id="file-input" name="gambar" class="form-control-file">
                                                 </div>
-                                            <button type="submit" value="submit"\ name="input"class="btn btn-primary btn-sm">
+
+                                                
+                                            <button type="submit" value="submit" name="input"class="btn btn-primary btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Submit
                                         </button>
                                         </form>
                                     </div>
-                                    <div class="card-footer">
                                    
-                                        <button type="reset" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-ban"></i> Reset
-                                        </button>
-                                    </div>
                                 </div>
                             
                             </div>

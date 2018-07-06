@@ -29,50 +29,8 @@
        <?php include_once("navbar.php")?>
     </section>
     <div id="content-event" class="container" style="margin-top:8px;">
-        <div class="row">
-            <div class="col-xs-12 ">
-                <h1 style="margin-bottom:47px;">GBI KASIH KARUNIA</h1>
-                <h2>Special Event</h2>
-                <div id="demo" class="carousel slide" data-ride="carousel">
-
-  <!-- Indicators -->
-                    <ul class="carousel-indicators">
-                        <li data-target="#demo" data-slide-to="0" class="active"></li>
-                        <li data-target="#demo" data-slide-to="1"></li>
-                        <li data-target="#demo" data-slide-to="2"></li>
-                    </ul>
-                  
-                  <!-- The slideshow -->
-                    <div class="carousel-inner">
-                    <div class="carousel-item active">
-
-                        <?php
-            $query_mysql = mysqli_query($db_link, "SELECT * FROM main_event ORDER BY id_main DESC limit 1"); while($data = mysqli_fetch_array($query_mysql, MYSQLI_ASSOC)){
-            ?>
-
-
-                    <img src="Admin/images/<?php echo $data['gambar']; ?>" alt="Los Angeles" width="1100" height="500">
-                    </div>
-
-                <?php } ?>
-                    <div class="carousel-item">
-                      <img src="assets/img/banner2.jpeg" alt="Chicago" width="1100" height="500">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="assets/img/banner2.jpeg" alt="New York" width="1100" height="500">
-                    </div>
-                  </div>
-                  
-                  <!-- Left and right controls -->
-                  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                  </a>
-                  <a class="carousel-control-next" href="#demo" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                  </a>
-                </div>
-            </div>
-        </div>
+       
+     
         <div class="container">
            
 
@@ -80,10 +38,10 @@
            
             <div class="row" style="margin-top:62px;">
                 <div class="col-8" style="margin:2px;margin-bottom:60px;">
-                    <h2 style="margin-bottom:26px;">Upcoming Events</h2>
+                    
 
                      <?php
-            $query_mysql = mysqli_query($db_link, "SELECT * FROM event ORDER BY id_event DESC");
+            $query_mysql = mysqli_query($db_link, "SELECT * FROM event where id_event = ".$_GET['id_event']." ");
             while($data = mysqli_fetch_array($query_mysql, MYSQLI_ASSOC)){
             ?>
                     <div class="card" id="thumnail-upcoming"><img class="img-fluid card-img-top w-100 d-block" src="Admin/images/<?php echo $data['gambar'];?>" style="height:300px;">
@@ -91,9 +49,7 @@
                             <h6 class="card-title"><?php echo $data['tanggal'] ; ?></h6>
                             <h4 class="card-title"><?php echo $data['judul'] ; ?></h4>
                             <p class="card-text"><?php echo $data['keterangan'] ; ?></p>
-                            <a href="detailevent.php?id_event=<?php echo $data['id_event']?>">
-                            <button class="btn btn-primary" type="button">Button</button>
-                            </a>
+                           
 
 
 
@@ -103,9 +59,7 @@
                    <?php } ?>
                     
                 </div>
-                <div class="col">
-                    <h2>Recent Events</h2>
-                </div>
+               
             </div>
         
         </div>
