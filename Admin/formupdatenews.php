@@ -1,4 +1,5 @@
 <?php 
+include_once('koneksi.php');
 include_once('session.php');
 ?>
 <!DOCTYPE html>
@@ -48,21 +49,51 @@ include_once('session.php');
 
         <!-- PAGE CONTAINER-->
         <div class="page-container">
-           
-
+            <!-- HEADER DESKTOP-->
+ 
             <!-- MAIN CONTENT-->
           
                             
 
 
-                            <div class="col-lg-6">
+                           <div class="col-lg-6">
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Form News </strong> Elements
+                                        <strong>Update News</strong> Elements
                                     </div>
                                     <div class="card-body card-block">
-                                        <form action="aksievent.php" method="post" enctype="multipart/form-data" class="form-horizontal">
-                                            <div class="row form-group">
+
+                                         <!-- form-->
+                                    <?php
+                                    if(isset($_GET['id_event'])):
+                                         if(isset($_POST['update'])):
+                                              $id_event = $_GET['id_event'];
+                                              
+                                              $stmt = $db_link->prepare("UPDATE event SET judul=?,tanggal=?,keterangan=?,ket_detail=?,gambar=? WHERE id_event=?");
+
+                                              $stmt->bind_param('ssssss',$judul,$tanggal,$keterangan,$ket_detail,$gambar,$id_event);
+                                     
+                                              $judul = $_POST['judul'];
+                                              $tanggal = $_POST['tanggal'];
+                                              $keterangan= $_POST['keterangan'];
+                                              $ket_detail = $_POST['ket_detail'];
+                                              $gambar = $_FILES['gambar']['name'];
+                                              
+                                                
+
+                                              if($stmt->execute()):
+                                                   move_uploaded_file($_FILES['gambar']['tmp_name'], "images/".$_FILES['gambar']['name']);
+                                                   echo "<script>location.href='formnews.php'</script>";
+
+                                              else:
+                                                   echo "<script>alert('".$stmt->error."')</script>";
+                                              endif;
+                                         endif;
+                                         $res = $db_link->query("SELECT * FROM event WHERE id_event=".$_GET['id_event']);
+                                         $row = $res->fetch_assoc();
+                                    ?>
+                                        <form  method="post" enctype="multipart/form-data" class="form-horizontal">
+                                                 <div class="row form-group">
                                                 <div class="col col-md-3">
                                                     <label class=" form-control-label">Admin</label>
                                                 </div>
@@ -75,7 +106,7 @@ include_once('session.php');
                                                     <label for="text-input" class=" form-control-label">Judul</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="judul" placeholder="Judul Event" class="form-control">
+                                                    <input type="text" id="text-input" name="judul" value="<?php echo $row['judul']?>"  class="form-control">
                                                    
                                                 </div>
                                             </div>
@@ -85,7 +116,7 @@ include_once('session.php');
                                                 </div>
                                               
                                                  <div class="col-12 col-md-9">
-                                                    <input type="date" id="date-input" name="tanggal" placeholder="" class="form-control">
+                                                    <input type="date" id="date-input" name="tanggal" value="<?php echo $row['tanggal']; ?>" placeholder="" class="form-control">
                                                     
                                                 </div>
                                             </div>
@@ -96,7 +127,7 @@ include_once('session.php');
                                                     <label for="textarea-input" class=" form-control-label">Keterangan</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <textarea name="keterangan" id="textarea-input" rows="9" placeholder="gambaran" class="form-control"></textarea>
+                                                    <textarea name="keterangan" id="textarea-input"  rows="0" placeholder=""  class="form-control"><?php echo $row['keterangan'];?></textarea>
                                                 </div>
                                             </div>
                                            
@@ -106,7 +137,7 @@ include_once('session.php');
                                                     <label for="textarea-input" class=" form-control-label">Keterangan detail</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <textarea name="ket_detail" id="textarea-input" rows="9" placeholder="tentang event..." class="form-control"></textarea>
+                                                    <textarea name="ket_detail" id="textarea-input" rows="9"  class="form-control"><?php echo $row['ket_detail'];?></textarea>
                                                 </div>
                                             </div>
                                            
@@ -120,104 +151,26 @@ include_once('session.php');
                                                     <label for="file-input" class=" form-control-label">Gambar</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="file" id="file-input" name="gambar" class="form-control-file">
-                                                </div>
+                                                    <input type="file" id="file-input" name="gambar"  class="form-control-file" ></div>
                                             </div>
 
 
-                                            <button type="submit" value="submit"  name="input" class="btn btn-primary btn-sm">
+                                            <button type="submit" value="submit"  name="update" class="btn btn-primary btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Submit
                                         </button>
                                         </form>
+                                         <?php endif; ?>
+
+
                                     </div>
                                    
                                 </div>
                             
                             </div>
 
-                           <div class="table-responsive table-responsive-data2">
-                                <table class="table table-data2">
-                                    <thead>
-                                        <tr>
-                                            
-                                            <th >id</th>
-                                            <th>judul</th>
-                                            <th>tanggal</th>
-                                            <th>gambar</th>
-                                            <th>keterangan</th>
-                                            <th>ket_detail</th>
-                                            <th>control</th>
-
-                                          
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-                                             <?php
-            $query_mysql = mysqli_query($db_link, "SELECT * FROM event ORDER BY id_event ASC ");
-            while($data = mysqli_fetch_array($query_mysql, MYSQLI_ASSOC)){
-            ?>
-                                        
-                                        <tr class="tr-shadow">
-                                          
-                                            <td><?php echo $data['id_event'];?>
-                                                
-                                            </td>
-                                            <td>
-                                                <span class="block-email">
-                                                    <?php echo $data['judul'] ?>
-                                                </span>
-                                            </td>
-                                            <td class="desc"><?php echo $data['tanggal'] ?></td>
 
 
-                                            <td><?php echo $data['gambar'] ?></td>
-                                             <td><?php echo $data['keterangan'] ?></td>
-                                                    <td><?php echo $data['ket_detail'] ?></td>
-                                            
-
-                                            <td>
-                                                <div class="table-data-feature">
-                                                    <?php if($_SESSION['role']=='superadmin'){
-                                                        echo '<a href="formupdatenews.php?id_event='?><?php echo $data['id_event']; ?><?php echo'"
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </button>
-                                                </a>';
-                                                    }else{
-                                                        echo '';
-                                                    } ?>
-                                                   
-                                                    
-                                                    <?php if($_SESSION['role']=='superadmin'){
-                                                        echo '
-                                                    <a href="deletenews.php?id_event='?><?php echo $data['id_event']; ?><?php echo '"
-
-
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                        <i class="zmdi zmdi-delete"></i>
-                                                    </button>
-                                                    </a>';
-                                                    }else{
-                                                        echo '';
-                                                    }?>
-
-
-
-                                                   
-                                                </div>
-                                            </td>
-                                            
-                                        </tr>
-
-
-                                    <?php } ?>
-                                        
-                                        
-                                    </tbody>
-                                </table>
-                            </div>
+                          
                         </div>
                         <div class="row">
                             <div class="col-md-12">

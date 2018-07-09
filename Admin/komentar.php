@@ -54,48 +54,69 @@ include_once('session.php');
             <!-- MAIN CONTENT-->
           
                             
-
+       <?php
+            $query_mysql = mysqli_query($db_link, "SELECT * FROM doa ORDER BY id_doa DESC");
+            while($data = mysqli_fetch_array($query_mysql, MYSQLI_ASSOC)){
+            ?>
 
                             <div class="col-lg-6" >
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Video Pengumuman</strong> 
+                                        <strong> Doa     <?php echo $data['nama']; ?></strong>    
                                     <div class="card-body card-block">
+
+                                        
+                               
                                         <form action="aksivideopengumuman.php" method="post" enctype="multipart/form-data" class="form-horizontal">
                                             
-                                           
+                              
                                             <div class="row form-group" >
                                                 <div class="col col-md-3">
-                                                    <label for="email-input" class=" form-control-label">Tanggal</label>
+                                                    <label for="email-input" class=" form-control-label">nama :</label>
                                                 </div>
                                               
-                                                 <div class="col-12 col-md-9">
-                                                    <input type="date" id="date-input" name="Tanggal_publish" placeholder="" class="form-control">
+                                                 <div class="col-12 col-md-9"><?php echo $data['nama'];?>
+                                                   
                                                     
                                                 </div>
                                             </div>
                                             
                                               <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label for="text-input" class=" form-control-label">URL</label>
+                                                    <label for="text-input" class=" form-control-label">Alamat : </label>
                                                 </div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="videonya" placeholder="Text" class="form-control">
+                                                <div class="col-12 col-md-9"><?php echo $data['alamat'];?>
+                                                    
                                                    
                                                 </div>
                                             </div>
                                        
-                                   
+                                                 <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">no_telepon : </label>
+                                                </div>
+                                                <div class="col-12 col-md-9"><?php echo $data['no_handphone'];?>
+                                                    
+                                                   
+                                                </div>
+                                            </div>
+                                                 <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">pesan doa :</label>
+                                                </div>
+                                                <div class="col-12 col-md-9"><?php echo $data['isi_doa'];?>
+                                                    
+                                                   
+                                                </div>
+                                            </div>
                                          
                                             
                                          
                                           
                                             
-                                            <button type="submit" value="submit"\ name="input"class="btn btn-primary btn-sm">
-                                            <i class="fa fa-dot-circle-o"></i> Submit
-                                        </button>
+                                        
                                         </form>
-                                    </div>
+
                                     
                                 </div>
                             
@@ -104,6 +125,9 @@ include_once('session.php');
                           
                         </div>
 
+                                    </div>
+                                     <?php } ?>
+                                    </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">

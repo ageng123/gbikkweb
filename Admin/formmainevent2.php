@@ -49,6 +49,7 @@ include_once('session.php');
         <!-- PAGE CONTAINER-->
         <div class="page-container">
             
+            </header>
             <!-- HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
@@ -56,53 +57,56 @@ include_once('session.php');
                             
 
 
-                            <div class="col-lg-6" >
+                            <div class="col-lg-6">
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Video Pengumuman</strong> 
+                                        <strong>Main event 2</strong> Elements
+                                    </div>
                                     <div class="card-body card-block">
-                                        <form action="aksivideopengumuman.php" method="post" enctype="multipart/form-data" class="form-horizontal">
-                                            
-                                           
-                                            <div class="row form-group" >
+                                        <form action="aksimainevent2.php" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                            <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label for="email-input" class=" form-control-label">Tanggal</label>
-                                                </div>
-                                              
-                                                 <div class="col-12 col-md-9">
-                                                    <input type="date" id="date-input" name="Tanggal_publish" placeholder="" class="form-control">
-                                                    
-                                                </div>
-                                            </div>
-                                            
-                                              <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="text-input" class=" form-control-label">URL</label>
+                                                    <label class=" form-control-label">Admin</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="videonya" placeholder="Text" class="form-control">
+                                                    <p class="form-control-static"><?php echo $user_name ?></p>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Judul</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="text-input" name="judul" placeholder="Judul Event" class="form-control">
                                                    
                                                 </div>
                                             </div>
-                                       
-                                   
                                          
                                             
-                                         
                                           
-                                            
-                                            <button type="submit" value="submit"\ name="input"class="btn btn-primary btn-sm">
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="file-input" class=" form-control-label">Gambar</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="file" id="file-input" name="gambar" class="form-control-file">
+                                                </div>
+
+                                                
+                                            <button type="submit" value="submit" name="input"class="btn btn-primary btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Submit
                                         </button>
                                         </form>
                                     </div>
-                                    
+                                   
                                 </div>
                             
                             </div>
 
                           
                         </div>
+
+                       
 
                         <div class="row">
                             <div class="col-md-12">
@@ -113,8 +117,10 @@ include_once('session.php');
                         </div>
                     </div>
                 </div>
-            </body>
-  
+            </div>
+        </div>
+
+    </div>
 
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>

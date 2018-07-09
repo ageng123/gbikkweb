@@ -8,11 +8,11 @@ if (isset($_POST['input'])) {
 	// membuat variabel untuk menampung data dari form
 
   $judul= $_POST['judul'];
- $gambar   = $_FILES['gambar']['name'];
+  $gambar   = $_FILES['gambar']['name'];
 
   // jalankan query INSERT untuk menambah data ke database
-  $query = "INSERT INTO main_event (judul, gambar)
-  VALUES ('$judul', '$gambar')";
+  $query = "INSERT INTO main_event2 (judul,gambar)
+  VALUES ('$judul','$gambar')";
   $result = mysqli_query($db_link, $query);
   // periska query apakah ada error
   if(!$result){
@@ -23,5 +23,5 @@ if (isset($_POST['input'])) {
 
 // melakukan redirect (mengalihkan) ke halaman index.php
 move_uploaded_file($_FILES['gambar']['tmp_name'], "images/".$_FILES['gambar']['name']);
-header("location:formmainevent.php");
+header("location:formmainevent2.php");
 ?>

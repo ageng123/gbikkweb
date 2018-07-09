@@ -1,4 +1,5 @@
 <?php 
+include_once('koneksi.php');
 include_once('session.php');
 ?>
 <!DOCTYPE html>
@@ -48,63 +49,129 @@ include_once('session.php');
 
         <!-- PAGE CONTAINER-->
         <div class="page-container">
-       
-
+            <!-- HEADER DESKTOP-->
+ 
             <!-- MAIN CONTENT-->
           
                             
 
 
-                            <div class="col-lg-6">
+                           <div class="col-lg-6">
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Special event</strong> Elements
+                                        <strong>Update akun</strong> Elements
                                     </div>
                                     <div class="card-body card-block">
-                                        <form action="aksimainevent.php" method="post" enctype="multipart/form-data" class="form-horizontal">
+
+                                         <!-- form-->
+                                    <?php
+                                    if(isset($_GET['id'])):
+                                         if(isset($_POST['update'])):
+                                              $id = $_GET['id'];
+                                              
+                                              $stmt = $db_link->prepare("UPDATE user SET username=?,password=?,nama_user=?,email=? WHERE id=?");
+
+                                              $stmt->bind_param('sssss',$username,$password,$nama_user,$email,$id);
+                                     
+                                              $nama_user = $_POST['nama'];
+                                              $email = $_POST['email'];
+                                              $username = $_POST['username'];
+                                              $password = $_POST['password'];
+                                                
+
+                                              if($stmt->execute()):
+                                                   echo "<script>location.href='form.php'</script>";
+                                              else:
+                                                   echo "<script>alert('".$stmt->error."')</script>";
+                                              endif;
+                                         endif;
+                                         $res = $db_link->query("SELECT * FROM user WHERE id=".$_GET['id']);
+                                         $row = $res->fetch_assoc();
+                                    ?>
+                                        <form  method="post" enctype="multipart/form-data" class="form-horizontal">
                                             <div class="row form-group">
+                                               
+                                               <input type="hidden" value="<?php echo $row['id']; ?> "id="text-input" name="" placeholder="Judul Event" class="form-control">
+                                                   
+
+
+
+
                                                 <div class="col col-md-3">
                                                     <label class=" form-control-label">Admin</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <p class="form-control-static"><?php echo $user_name ?></p>
+                                                    <p class="form-control-static"><?php echo $username ?></p>
                                                 </div>
+
+
                                             </div>
+
+
+
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label for="text-input" class=" form-control-label">Judul</label>
+                                                    <label for="text-input" class=" form-control-label">username</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="judul" placeholder="Judul Event" class="form-control">
+                                                    <input type="text" id="text-input" name="username" placeholder="Judul Event" value="<?php echo $row['username'] ?>" class="form-control">
                                                    
                                                 </div>
                                             </div>
-                                         
-                                            
-                                          
-                                            <div class="row form-group">
+
+
+                                             
+
+
+                                             <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label for="file-input" class=" form-control-label">Gambar</label>
+                                                    <label for="text-input" class=" form-control-label">nama</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="file" id="file-input" name="gambar" class="form-control-file">
+                                                    <input type="text" id="text-input" name="nama" placeholder="Judul Event" class="form-control" value="<?php echo $row['nama_user']; ?>">
+                                                   
                                                 </div>
+                                            </div>
 
-                                                
-                                            <button type="submit" value="submit" name="input"class="btn btn-primary btn-sm">
+
+                                             <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">email</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="text-input" name="email" placeholder="Judul Event" class="form-control" value="<?php echo $row['email']; ?>">
+                                                   
+                                                </div>
+                                            </div>
+
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">password</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="text-input" name="password" placeholder="Password" class="form-control" value="<?php echo $row['password']; ?>">
+                                                   
+                                                </div>
+                                            </div>
+
+
+                                            <button type="submit" value="Submit" name="update" class="btn btn-primary btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Submit
                                         </button>
                                         </form>
+                                         <?php endif; ?>
+
+
                                     </div>
                                    
                                 </div>
                             
                             </div>
 
+
+
                           
                         </div>
-
-                            </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">

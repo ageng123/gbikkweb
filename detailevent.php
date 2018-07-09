@@ -48,7 +48,7 @@
                         <div class="card-body">
                             <h6 class="card-title"><?php echo $data['tanggal'] ; ?></h6>
                             <h4 class="card-title"><?php echo $data['judul'] ; ?></h4>
-                            <p class="card-text"><?php echo $data['keterangan'] ; ?></p>
+                            <p class="card-text"><?php echo $data['ket_detail'] ; ?></p>
                            
 
 

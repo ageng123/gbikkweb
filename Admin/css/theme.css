@@ -282,8 +282,10 @@ section {
 }
 
 .page-container {
+   padding-top: 50px;
     background: #e5e5e5;
-    padding-left: 300px;
+    padding-left: 50px;
+    padding-bottom: 200px;
 }
 
 @media (max-width: 991px) {
@@ -4518,6 +4520,7 @@ section {
 @media (min-width: 1200px) {
     .table-responsive-data2 {
         overflow: visible;
+        
     }
 }
 

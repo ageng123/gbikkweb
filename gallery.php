@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include('Admin/koneksi.php'); ?>
 <html>
 
 <head>
@@ -27,13 +28,26 @@
     <section class="py-5">
         <div class="container">
             <h1 class="text-center">GALLERY</h1>
-            <div class="filtr-controls"><span class="active" data-filter="all">all </span><span data-filter="1">category 1 </span><span data-filter="2">category 2 </span><span data-filter="3">category 3 </span></div>
-            <div class="row filtr-container">
-                <div class="col-sm-6 col-md-4 col-lg-3 filtr-item" data-category="1, 3"><a href="assets/img/kegiatan2.jpeg"><img class="img-fluid" src="assets/img/kegiatan2.jpeg" data-caption="<strong>Image description</strong><br><em>Lorem ipsum</em>"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 filtr-item" data-category="2"><a href="assets/img/kegiatan1.jpeg"><img class="img-fluid" src="assets/img/kegiatan1.jpeg"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 filtr-item" data-category="1, 3"><a href="assets/img/kegiatan3.jpeg"><img class="img-fluid" src="assets/img/kegiatan3.jpeg"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 filtr-item" data-category="2, 3"><a href="assets/img/kegiatan3.jpeg"><img class="img-fluid" src="assets/img/kegiatan3.jpeg"></a></div>
+            <div class="filtr-controls"><span class="active" data-filter="all">all </span><span data-filter="1">Umum</span><span data-filter="2">KKR </span><span data-filter="3">Youth </span><span data-filter="4">Retreat </span>
+                <span data-filter="5">Natal </span>
+
+
             </div>
+            
+        
+
+            <div class="row filtr-container">
+                      <?php
+            $query_mysql = mysqli_query($db_link, "SELECT * FROM gallerytbl ORDER BY id_foto DESC");
+            while($data = mysqli_fetch_array($query_mysql, MYSQLI_ASSOC)){
+            ?>
+                <div class="col-sm-6 col-md-4 col-lg-3 filtr-item" data-category="<?php echo substr($data['kategori'],0,1);?>"><a href="Admin/images/<?php echo $data['gambar'];?>"><img class="img-fluid" src="Admin/images/<?php echo $data['gambar'];?>" data-caption="<strong><?php echo $data['deskripsi'];?></strong>"></a></div>
+                
+ <?php } ?>
+
+            </div>
+
+           
         </div>
     </section>
     <script src="assets/js/jquery.min.js"></script>

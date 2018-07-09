@@ -48,9 +48,7 @@ include_once('session.php');
 
         <!-- PAGE CONTAINER-->
         <div class="page-container">
-            <!-- HEADER DESKTOP-->
-          
-            <!-- HEADER DESKTOP-->
+  
 
             <!-- MAIN CONTENT-->
           
@@ -60,74 +58,56 @@ include_once('session.php');
                             <div class="col-lg-6">
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Pembuatan Akun Form</strong> 
+                                        <strong>Form Gallery </strong> 
                                     </div>
                                     <div class="card-body card-block">
-                                        <form action="aksiakunform.php" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                        <form action="aksigallery.php" method="post" enctype="multipart/form-data" class="form-horizontal">
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label class=" form-control-label">Static</label>
+                                                    <label class=" form-control-label">Admin</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <p class="form-control-static"><?php echo $user_name?></p>
+                                                    <p class="form-control-static"><?php echo $user_name ?></p>
                                                 </div>
                                             </div>
-                                            <div class="row form-group">
+                                           <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label for="text-input" class=" form-control-label">Username</label>
+                                                    <label for="select" class=" form-control-label">kategori</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="username" placeholder="Text" class="form-control">
-                                                   
-                                                </div>
-                                            </div>
-                                       
-                                       	   <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="text-input" class=" form-control-label">Password</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="password" placeholder="Text" class="form-control">
-                                                   
-                                                </div>
-                                            </div>
-
-                                               <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="text-input" class=" form-control-label">nama</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="nama_user" placeholder="Text" class="form-control">
-                                                   
-                                                </div>
-                                            </div>
-
-
-                                               <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="text-input" class=" form-control-label">email</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="email" placeholder="Text" class="form-control">
-                                                   
-                                                </div>
-                                            </div>
-                                       
-                                       		    <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="select" class=" form-control-label">Role</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <select name="role" id="select" class="form-control">
+                                                    <select name="kategori" id="select" class="form-control">
                                                       
-                                                        <option value="superadmin">Superadmin</option>
-                                                        <option value="admin">admin</option>
+                                                        <option value="1.Umum">1. Umum</option>
+                                                        <option value="2.KKR">2. KKR</option>
+                                                        <option value="3.YOUTH">3. YOUTH</option>
+                                                        <option value="4.RETREAT">4. RETREAT</option>
+                                                        <option value="5.NATAL">5. NATAL</option>
                                                         
                                                     </select>
                                                 </div>
                                             </div>
-                                       
-                                       		<button type="submit" value="submit"\ name="input"class="btn btn-primary btn-sm">
+                                           <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">deskripsi</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="text-input" name="deskripsi" placeholder="deskripsi" class="form-control">
+                                                   
+                                                </div>
+                                            </div>
+                                           
+                                          
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="file-input" class=" form-control-label">Gambar</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="file" id="file-input" name="gambar" class="form-control-file">
+                                                </div>
+                                            </div>
+
+
+                                            <button type="submit" value="submit"\ name="input"class="btn btn-primary btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Submit
                                         </button>
                                         </form>
@@ -136,17 +116,17 @@ include_once('session.php');
                                 </div>
                             
                             </div>
-		
-                          	    <div class="table-responsive table-responsive-data2">
+
+                           <div class="table-responsive table-responsive-data2">
                                 <table class="table table-data2">
                                     <thead>
                                         <tr>
                                             
                                             <th >id</th>
-                                            <th>email</th>
-                                            <th>nama</th>
-                                            <th>username</th>
-                                            <th>role</th>
+                                            <th>kategori</th>
+                                            <th>deskripsi</th>
+                                            <th>gambar</th>
+                                           
                                             <th>control</th>
 
                                           
@@ -155,63 +135,62 @@ include_once('session.php');
                                     </thead>
                                     <tbody>
 
-										     <?php
-            $query_mysql = mysqli_query($db_link, "SELECT * FROM user ORDER BY id ASC ");
+                                             <?php
+            $query_mysql = mysqli_query($db_link, "SELECT * FROM gallerytbl ORDER BY id_foto ASC ");
             while($data = mysqli_fetch_array($query_mysql, MYSQLI_ASSOC)){
             ?>
-										
+                                        
                                         <tr class="tr-shadow">
                                           
-                                            <td><?php echo $data['id'];?>
-                                            	
+                                            <td><?php echo $data['id_foto'];?>
+                                                
                                             </td>
                                             <td>
                                                 <span class="block-email">
-                                                	<?php echo $data['email'] ?>
+                                                    <?php echo $data['kategori'] ?>
                                                 </span>
                                             </td>
-                                            <td class="desc"><?php echo $data['nama_user'] ?></td>
+                                            <td class="desc"><?php echo $data['deskripsi'] ?></td>
 
 
-                                            <td><?php echo $data['username'] ?></td>
-                                             <td><?php echo $data['role'] ?></td>
+                                            <td><?php echo $data['gambar'] ?></td>
+                                           
                                            
                                             
 
                                             <td>
                                                 <div class="table-data-feature">
-                                                	<?php if($_SESSION['role']=='superadmin'){
-                                                		echo '<a href="formupdateakun.php?id='?><?php echo $data['id']; ?><?php echo'"
+                                                    <?php if($_SESSION['role']=='superadmin'){
+                                                        echo '<a href="formupdategallery.php?id_foto='?><?php echo $data['id_foto']; ?><?php echo'"
                                                     <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                                         <i class="zmdi zmdi-edit"></i>
                                                     </button>
                                                 </a>';
-                                                	}else{
-                                                		echo '';
-                                                	} ?>
-                                                  
+                                                    }else{
+                                                        echo '';
+                                                    } ?>
+                                                   
                                                     
-													<?php if($_SESSION['role']=='superadmin'){
-                                                		echo '
-													<a href="deleteuser.php?id='?><?php echo $data['id']; ?><?php echo '"
+                                                    <?php if($_SESSION['role']=='superadmin'){
+                                                        echo '
+                                                    <a href="deletefoto.php?id_foto='?><?php echo $data['id_foto']; ?><?php echo '"
 
 
                                                     <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                                         <i class="zmdi zmdi-delete"></i>
                                                     </button>
-                                                	</a>';
-                                                	}else{
-                                                		echo '';
-                                                	}?>
+                                                    </a>';
+                                                    }else{
+                                                        echo '';
+                                                    }?>
 
 
 
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </button>
+
+                                                   
                                                 </div>
                                             </td>
-                                        	
+                                            
                                         </tr>
 
 

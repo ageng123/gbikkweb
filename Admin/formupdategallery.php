@@ -1,4 +1,5 @@
 <?php 
+include_once('koneksi.php');
 include_once('session.php');
 ?>
 <!DOCTYPE html>
@@ -48,20 +49,48 @@ include_once('session.php');
 
         <!-- PAGE CONTAINER-->
         <div class="page-container">
-       
-
+            <!-- HEADER DESKTOP-->
+ 
             <!-- MAIN CONTENT-->
           
                             
 
 
-                            <div class="col-lg-6">
+                           <div class="col-lg-6">
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Special event</strong> Elements
+                                        <strong>Update gallery</strong> Elements
                                     </div>
                                     <div class="card-body card-block">
-                                        <form action="aksimainevent.php" method="post" enctype="multipart/form-data" class="form-horizontal">
+
+                                         <!-- form-->
+                                    <?php
+                                    if(isset($_GET['id_foto'])):
+                                         if(isset($_POST['update'])):
+                                              $id_foto = $_GET['id_foto'];
+                                              
+                                              $stmt = $db_link->prepare("UPDATE gallerytbl SET kategori=?,deskripsi=?,gambar=? WHERE id_foto=?");
+
+                                              $stmt->bind_param('ssss',$kategori,$deskripsi,$gambar,$id_foto);
+                                     
+                                              $kategori = $_POST['kategori'];
+                                              $deskripsi = $_POST['deskripsi'];
+                                              $gambar = $_FILES['gambar']['name'];
+                                              
+                                                
+
+                                              if($stmt->execute()):
+                                                   move_uploaded_file($_FILES['gambar']['tmp_name'], "images/".$_FILES['gambar']['name']);
+                                                   echo "<script>location.href='formgallery.php'</script>";
+
+                                              else:
+                                                   echo "<script>alert('".$stmt->error."')</script>";
+                                              endif;
+                                         endif;
+                                         $res = $db_link->query("SELECT * FROM gallerytbl WHERE id_foto=".$_GET['id_foto']);
+                                         $row = $res->fetch_assoc();
+                                    ?>
+                                        <form  method="post" enctype="multipart/form-data" class="form-horizontal">
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
                                                     <label class=" form-control-label">Admin</label>
@@ -70,17 +99,32 @@ include_once('session.php');
                                                     <p class="form-control-static"><?php echo $user_name ?></p>
                                                 </div>
                                             </div>
-                                            <div class="row form-group">
+                                           <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label for="text-input" class=" form-control-label">Judul</label>
+                                                    <label for="select" class=" form-control-label">kategori</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="judul" placeholder="Judul Event" class="form-control">
+                                                    <select name="kategori" value="<?php echo $row['kategori'] ?>"  id="select" class="form-control">
+                                                      
+                                                        <option value="1.Umum">1. Umum</option>
+                                                        <option value="2.KKR">2. KKR</option>
+                                                        <option value="3.YOUTH">3. YOUTH</option>
+                                                        <option value="4.RETREAT">4. RETREAT</option>
+                                                        <option value="5.NATAL">5. NATAL</option>
+                                                        
+                                                    </select>
+                                                </div>
+                                            </div>
+                                           <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">deskripsi</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="text-input" value="<?php echo $row['deskripsi'] ?>"  name="deskripsi" placeholder="deskripsi" class="form-control">
                                                    
                                                 </div>
                                             </div>
-                                         
-                                            
+                                           
                                           
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
@@ -89,22 +133,26 @@ include_once('session.php');
                                                 <div class="col-12 col-md-9">
                                                     <input type="file" id="file-input" name="gambar" class="form-control-file">
                                                 </div>
+                                            </div>
 
-                                                
-                                            <button type="submit" value="submit" name="input"class="btn btn-primary btn-sm">
+
+                                            <button type="submit" value="submit" name="update"class="btn btn-primary btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Submit
                                         </button>
                                         </form>
+                                         <?php endif; ?>
+
+
                                     </div>
                                    
                                 </div>
                             
                             </div>
 
+
+
                           
                         </div>
-
-                            </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">

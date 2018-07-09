@@ -30,8 +30,9 @@
                 </div>
                 <div class="col-md-3 social-networks">
                     <div></div><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                    <a href="contact.php">
                     <button
-                        class="btn btn-primary" type="button" style="margin-top:20px;">Contact us</button>
+                        class="btn btn-primary" type="button" style="margin-top:20px;">Contact us</button></a>
                 </div>
             </div>
         </div>

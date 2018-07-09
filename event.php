@@ -39,7 +39,7 @@
                     <ul class="carousel-indicators">
                         <li data-target="#demo" data-slide-to="0" class="active"></li>
                         <li data-target="#demo" data-slide-to="1"></li>
-                        <li data-target="#demo" data-slide-to="2"></li>
+                    
                     </ul>
                   
                   <!-- The slideshow -->
@@ -55,12 +55,18 @@
                     </div>
 
                 <?php } ?>
+
+
                     <div class="carousel-item">
-                      <img src="assets/img/banner2.jpeg" alt="Chicago" width="1100" height="500">
+
+                        <?php
+            $query_mysql = mysqli_query($db_link, "SELECT * FROM main_event2 ORDER BY id_main2 DESC limit 1"); while($data = mysqli_fetch_array($query_mysql, MYSQLI_ASSOC)){
+            ?>
+
+                      <img src="Admin/images/<?php echo $data['gambar']; ?>" alt="Chicago" width="1100" height="500">
                     </div>
-                    <div class="carousel-item">
-                      <img src="assets/img/banner2.jpeg" alt="New York" width="1100" height="500">
-                    </div>
+                    
+                <?php } ?>
                   </div>
                   
                   <!-- Left and right controls -->
@@ -103,9 +109,7 @@
                    <?php } ?>
                     
                 </div>
-                <div class="col">
-                    <h2>Recent Events</h2>
-                </div>
+          
             </div>
         
         </div>
