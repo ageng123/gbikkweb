@@ -2,8 +2,8 @@
 
    session_start();
    require_once("koneksi.php");
-   $username = $_POST['username'];
-   $pass = $_POST['password'];   
+   $username = mysqli_real_escape_string($db,$_POST['username']);
+   $pass = mysqli_real_escape_string($db,$_POST['password']);
    $sql = "SELECT * FROM user WHERE username = '$username'";
    $query = $db_link->query($sql);
    $hasil = $query->fetch_assoc();

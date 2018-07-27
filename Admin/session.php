@@ -12,8 +12,8 @@ require_once('koneksi.php');
             while ($row = mysqli_fetch_array($select_user_profile_query)) {
                 $username = $row['username'];
                 $user_password = $row['password'];
-                $user_name = $row['nama_user'];
-                $user_email = $row['email'];
+                $role = $row['id_role'];
+                $nama = $row['nama_user'];
                 /*$user_image = $row['image'];
                 $user_role = $row['user_role'];*/
             }
